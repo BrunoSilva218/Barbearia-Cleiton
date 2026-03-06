@@ -24,19 +24,26 @@ a {
 }
 
 /* =========================
-   HERO HEADER
+   HERO
 ========================= */
 .hero-header {
     position: relative;
     height: 100vh;
-    background: url('../imagens/foto-tempo.png') center/cover no-repeat;
+    background:
+    linear-gradient(to right, rgba(0,0,0,0.95) 40%, rgba(0,0,0,0.2)),
+    url('../imagens/foto-tempo.png') center/cover no-repeat;
 
     display: flex;
     align-items: center;
-    
 }
 
-/* BLOCO FIXO SUPERIOR ESQUERDO */
+/* Overlay opcional */
+.overlay {
+    position: absolute;
+    inset: 0;
+}
+
+/* TOPO ESQUERDO (LOGO + MENU) */
 .top-bar {
     position: absolute;
     top: 30px;
@@ -47,62 +54,24 @@ a {
     z-index: 3;
 }
 
-/* Overlay escuro */
-.overlay {
-    position: absolute;
-    inset: 0;
-    background: rgba(0, 0, 0, 0.37);
-}
-
-/* Conteúdo central */
-.hero-content {
-    position: relative;
-    z-index: 2;
-    max-width: 600px;
-    text-align: left;
-    margin-left: 8%;
-}
-
 /* Marca */
 .brand {
-    font-size: 64px;
-    letter-spacing: 2px;
-    color: #c59d5f;
-
+    font-size: 32px;
+    letter-spacing: 4px;
+    color: #fff;
 }
 
-.brand-fixed {
-    position: absolute;
-    top: 30px;
-    left: 60px;
-    font-size: 28px;
-    letter-spacing: 2px;
-    color: #c59d5f;
-    z-index: 3;
-}
-
-.slogan {
-    font-size: 18px;
-    margin-bottom: 35px;
-    color: #ddd;
-}
-
-/* =========================
-   NAV
-========================= */
+/* NAV */
 nav {
     display: flex;
-    gap: 35px;
+    gap: 34px;
 }
 
 nav a {
     color: #fff;
-    font-weight: 500;
-    font-size: 15px;
+    font-size: 19px;
     letter-spacing: 1px;
     position: relative;
-
-    transition: 0.3 ease;
 }
 
 /* Linha animada */
@@ -125,20 +94,42 @@ nav a:hover::after {
     width: 100%;
 }
 
-/* =========================
-   BOTÃO
-========================= */
-.btn {
-    display: inline-block;
-    background-color: #c59d5f;
-    color: #000;
-    padding: 14px 35px;
-    font-weight: bold;
-    border-radius: 5px;
+/* HERO CONTENT */
+.hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 520px;
+    margin-left: 60px;
 }
 
-.btn:hover {
-    background-color: #fff;
+.experience {
+    font-size: 29px;
+    color: #c59c5fd0;
+    margin-bottom: 24px;
+    letter-spacing: 2px;
+}
+
+.description {
+    font-size: 17px;
+    line-height: 1.6;
+    color: #ddd;
+    margin-bottom: 35px;
+}
+
+/* BOTÃO HERO */
+.btn-hero {
+    display: inline-block;
+    padding: 14px 35px;
+    border: 1px solid #c59d5f;
+    color: #fff;
+    border-radius: 6px;
+    font-weight: 600;
+    transition: 0.3s ease;
+}
+
+.btn-hero:hover {
+    background-color: #c59d5f;
+    color: #000;
 }
 
 /* =========================
@@ -178,7 +169,6 @@ nav a:hover::after {
     transition: 0.4s ease;
 }
 
-/* Zoom */
 .card:hover img {
     transform: scale(1.1);
 }
@@ -196,35 +186,106 @@ nav a:hover::after {
     font-weight: bold;
 }
 
+
+/* SOBRE */
+
+.sobre{
+    padding: 60px;
+}
+
+.sobre h2{
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.container-sobre{
+    display: flex;
+    gap: 40px;
+    align-items: center;
+    justify-content: center;
+}
+
+.imagem img{
+    width: 350px;
+    border-radius: 10px;
+}
+
+.texto{
+    max-width: 400px;
+}
+
+.texto button{
+    margin-top: 20px;
+    padding: 10px 20px;
+    border: 1px solid #c9a35c;
+    background: transparent;
+    color: #c9a35c;
+    cursor: pointer;
+}
+
+/* CONTATO */
+
+.contato{
+    padding: 60px;
+}
+
+.contato h2{
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.container-contato{
+    display: flex;
+    justify-content: center;
+    gap: 60px;
+}
+
+.info p{
+    font-size: 20px;
+    margin: 10px 0;
+}
+
+.formulario{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.formulario input,
+.formulario textarea{
+    padding: 10px;
+    width: 250px;
+    background: #1a1a1a;
+    border: 1px solid #333;
+    color: white;
+    font-size: 20px;
+}
+
+.formulario button{
+    padding: 10px;
+    background: #c9a35c;
+    border: none;
+    cursor: pointer;
+}
+
 /* =========================
    RESPONSIVO
 ========================= */
 @media (max-width: 768px) {
 
-    .brand {
-        font-size: 36px;
-    }
-
-    @media (max-width: 768px) {
-}
-
-    .brand-fixed {
+    .top-bar {
         position: relative;
-        top: 0;
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
         left: 0;
-        text-align: center;
-        margin-bottom: 20px;
+        top: 0;
+        margin-top: 20px;
     }
 
-    .hero-content {
-        margin-left: 0;
+    .brand {
+        font-size: 28px;
         text-align: center;
-        padding: 0 20px;
-    }
-
-
-    .slogan {
-        font-size: 15px;
     }
 
     nav {
@@ -232,8 +293,21 @@ nav a:hover::after {
         gap: 15px;
     }
 
+    .hero-content {
+        margin: 0 auto;
+        text-align: center;
+        padding: 0 20px;
+    }
+
+    .experience {
+        font-size: 18px;
+    }
+
+    .description {
+        font-size: 15px;
+    }
+
     #servicos {
         padding: 60px 20px;
     }
-
 }
