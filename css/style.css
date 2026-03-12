@@ -16,10 +16,12 @@ body {
     font-family: Arial, Helvetica, sans-serif;
     background-color: #111;
     color: #fff;
+    overflow-x: hidden;
 }
 
 html{
 scroll-behavior: smooth;
+overflow-x: hidden;
 }
 
 a {
@@ -55,7 +57,7 @@ a {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 60px;
+    gap: 20px;
     z-index: 1000;
     padding: 20px 60px;
 
@@ -75,7 +77,7 @@ a {
 /* NAV */
 nav {
     display: flex;
-    gap: 20px;
+    gap: 34px;
 }
 
 nav a {
@@ -286,6 +288,40 @@ scroll-margin-top:120px;
 /* =========================
    RESPONSIVO
 ========================= */
+
+@media (max-width:480px){
+
+    .brand{
+        font-size:22px;
+    }
+
+    .experience{
+        font-size:16px;
+    }
+
+    .description{
+        font-size:14px;
+    }
+
+    .btn-hero{
+        padding:12px 24px;
+    }
+
+    .hero-content{
+        margin-left:0;
+        padding:0 20px;
+        text-align:center;
+    }
+
+    nav{
+        flex-direction:column;
+        align-items:center;
+        gap:12px;
+    }
+
+}
+
+
 @media (max-width: 768px) {
 
     .top-bar {
@@ -356,7 +392,7 @@ scroll-margin-top:120px;
 
     .imagem img {
         width: 100%;
-        max-width: 300px;
+        max-width: 350px;
     }
 
     /* Contato */
